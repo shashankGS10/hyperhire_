@@ -1,4 +1,4 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
 
 ## Getting Started
 
@@ -14,23 +14,79 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# Project Overview
+A modern web application built with Next.js, featuring an interactive carousel and category listing system. Deployed and tested on Vercel within a 5-hour development sprint.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## ✨ Key Features
 
-## Learn More
+### 1. Interactive Profile Carousel
+A sophisticated card-swiper component that showcases profiles with smooth animations and transitions.
 
-To learn more about Next.js, take a look at the following resources:
+**Why:**
+- Provides an engaging way to display team members or user profiles
+- Improves user engagement through interactive elements
+- Offers clear visibility of pricing and professional information
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**How:**
+- Implemented using Framer Motion for fluid animations
+- Automatic rotation with 5-second intervals
+- Interactive navigation with left/right controls
+- Responsive design that works across all devices
+- Price tooltip with elegant positioning
+- Skill tags with modern styling
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+// Key implementation highlights
+const levels = [
+"scale-90 opacity-80 z-10",
+"scale-100 z-20",
+"scale-90 opacity-80 z-10",
+];```
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 2. Category Listing System
+A horizontally scrollable category list with visual elements and smooth scrolling.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Why:**
+- Provides easy navigation through different categories
+- Optimized for mobile and desktop viewing
+- Clean and minimal design approach
+
+**How:**
+- Implemented using CSS Grid and Flexbox
+- Smooth scrolling behavior
+- Backdrop blur effects for modern UI
+- Responsive image handling with Next.js Image optimization
+
+## 🛠 Technical Implementation
+
+### Technologies Used
+- Next.js 13+ (App Router)
+- TypeScript
+- Framer Motion
+- Tailwind CSS
+- Vercel (Deployment)
+
+### Utility Functions
+Includes a custom className utility for managing Tailwind classes:
+
+
+## ✅ Testing & Deployment
+- UI/UX tested and approved
+- Fully responsive across devices
+- Successfully deployed on Vercel
+- Development completed within 5-hour timeframe
+
+## 🚀 Live Demo
+[View the live demo on Vercel](#) <!-- Add your Vercel deployment link -->
+
+## 📱 Mobile Optimization
+- Responsive design principles
+- Touch-friendly interactions
+- Optimized assets for faster loading
+- Smooth scrolling on mobile devices
+
+---
+
+Built with ❤️ using Next.js and TypeScript
