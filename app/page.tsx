@@ -3,7 +3,7 @@ import Image from "next/image";
 import TestimonialCarousel from "@/components/global/swipper-card";
 import CategoryList from "@/components/global/CategoryList";
 import { getProfiles, getCategories } from "@/lib/api";
-
+import ChatBubble from "@/components/atoms/ChatBubble";
 
 export default async function Home() {
   const [profiles, categories] = await Promise.all([
@@ -14,7 +14,7 @@ export default async function Home() {
     <div className="min-h-screen flex flex-col">
     {/* Gradient Section */}
     <div className="bg-gradient-to-r from-cyan-500 to-blue-500 flex item-center text-white">
-      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 w-screen">
         {/* Header */}
         <header className="flex justify-between items-center py-6">
           <Image
@@ -37,11 +37,9 @@ export default async function Home() {
         </header>
 
         {/* Hero Section */}
-        <section className="flex flex-col sm:flex-row text-start py-12">
+        <section className="flex flex-col sm:flex-row text-start py-12 w-full">
           <div className="min-w-1/2 md:w-1/2">
-            <div className="text-2xl font-bold bg-gray-100 rounded-2xl px-4 py-2 text-emerald-500 inline-block my-8">
-              풀타임, 파트타임
-            </div>
+          <ChatBubble />
             <h1 className="text-4xl font-extrabold leading-tight sm:text-5xl text-white">
               최고의 실력을 가진
               <br /> 외국인 인재를 찾고 계신가요?
