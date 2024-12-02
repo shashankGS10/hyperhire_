@@ -10,6 +10,22 @@ const FALLBACK_DATA = {
       flag: "🇨🇴",
       price: "월 100만원",
       image: "https://images.unsplash.com/photo-1636041293178-808a6762ab39?q=80&w=3464&auto=format&fit=crop"
+    },
+    {
+      name: "Sarah Kim",
+      role: "디자인 · 3y+",
+      skills: ["UI/UX Design", "Figma", "Photoshop", "Prototyping"],
+      flag: "🇰🇷",
+      price: "월 101만원",
+      image: "https://images.unsplash.com/photo-1624561172888-ac93c696e10c?q=80&w=2592"
+    },
+    {
+      name: "Emily Johnson",
+      role: "개발자 · 5y+",
+      skills: ["React", "Node.js", "MongoDB", "AWS"],
+      flag: "🇺🇸",
+      price: "월 102만원",
+      image: "https://images.unsplash.com/photo-1624561172888-ac93c696e10c?q=80&w=2592"
     }
   ],
   categories: [
@@ -17,12 +33,40 @@ const FALLBACK_DATA = {
       title: "해외 마케팅",
       icon: "/icon1.png",
       link: "#"
+    },
+    {
+      title: "퍼블리셔",
+      icon: "/icon2.png",
+      link: "#"
+    },
+    {
+      title: "카드원(제조사)",
+      icon: "/icon3.png",
+      link: "#"
+    },
+    {
+      title: "해외 세일즈",
+      icon: "/icon4.png",
+      link: "#"
+    },
+    {
+      title: "해외 CS",
+      icon: "/icon6.png",
+      link: "#"
     }
   ],
   stats: [
     {
       title: "평균 월 120만원",
       description: "임금을 해당 국가를 기준으로 계산합니다."
+    },
+    {
+      title: "최대 3회 인력교체",
+      description: "막상 채용해보니 맞지 않아도 걱정하지 마세요."
+    },
+    {
+      title: "평균 3일, 최대 10일",
+      description: "급하게 사람이 필요한 경우에도 빠른 채용이 가능합니다."
     }
   ]
 };
