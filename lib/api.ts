@@ -66,17 +66,22 @@ export async function getProfiles(): Promise<Profile[]> {
     const data = await res.json();
     
     // More thorough validation
-    return (data || []).map((profile: Profile | undefined) => {
-      if (!profile) return FALLBACK_DATA.profiles[0];
-      
-      return {
-        name: profile.name || 'Unknown',
-        role: profile.role || '',
-        skills: profile.skills || [],
-        flag: profile.flag || '',
-        price: profile.price || '가격 미정',
-        image: profile.image || '',
+    return (data || []).map((profile: Partial<Profile>) => { 
+      if (!profile) {
+        return FALLBACK_DATA.profiles[0];
+      }
+    
+      // Type assertion and validation
+      const safeProfile: Profile = {
+        name: typeof profile?.name === 'string' ? profile.name : 'Unknown',
+        role: typeof profile?.role === 'string' ? profile.role : '',
+        skills: Array.isArray(profile?.skills) ? profile.skills : [],
+        flag: typeof profile?.flag === 'string' ? profile.flag : '',
+        price: typeof profile?.price === 'string' ? profile.price : '가격 미정',
+        image: typeof profile?.image === 'string' ? profile.image : '',
       };
+    
+      return safeProfile;
     });
   } catch (error) {
     console.error('Error fetching profiles:', error);
