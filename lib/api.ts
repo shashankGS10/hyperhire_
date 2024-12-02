@@ -65,11 +65,19 @@ export async function getProfiles(): Promise<Profile[]> {
 
     const data = await res.json();
     
-    // Add validation to ensure each profile has required fields
-    return data.map((profile: Profile) => ({
-      ...profile,
-      price: profile?.price || '가격 미정',  // Provide fallback value if price is undefined
-    }));
+    // More thorough validation
+    return (data || []).map((profile: Profile | undefined) => {
+      if (!profile) return FALLBACK_DATA.profiles[0];
+      
+      return {
+        name: profile.name || 'Unknown',
+        role: profile.role || '',
+        skills: profile.skills || [],
+        flag: profile.flag || '',
+        price: profile.price || '가격 미정',
+        image: profile.image || '',
+      };
+    });
   } catch (error) {
     console.error('Error fetching profiles:', error);
     return FALLBACK_DATA.profiles;
