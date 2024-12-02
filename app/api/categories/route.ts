@@ -30,5 +30,10 @@ const categories: Category[] = [
 ]
 
 export async function GET() {
-  return NextResponse.json(categories)
+  try {
+    return NextResponse.json(categories);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  } catch (error) {
+    return new NextResponse('Internal Server Error', { status: 500 });
+  }
 }

@@ -29,5 +29,10 @@ const profiles: Profile[] = [
 ]
 
 export async function GET() {
-  return NextResponse.json(profiles)
+  try {
+    return NextResponse.json(profiles);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  } catch (error) {
+    return new NextResponse('Internal Server Error', { status: 500 });
+  }
 }
