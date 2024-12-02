@@ -30,7 +30,6 @@ A sophisticated card-swiper component that showcases profiles with smooth animat
 
 **How:**
 - Implemented using Framer Motion for fluid animations
-- Automatic rotation with 5-second intervals
 - Interactive navigation with left/right controls
 - Responsive design that works across all devices
 - Price tooltip with elegant positioning
