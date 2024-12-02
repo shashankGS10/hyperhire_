@@ -27,32 +27,26 @@ const FALLBACK_DATA = {
   ]
 };
 
-// Smart base URL detection
+
 function getBaseUrl() {
-  // During build time or when environment variables are not set
   if (process.env.NODE_ENV === 'production') {
-    // Return fallback data during build
     return null;
   }
   
-  // For browser environment
   if (typeof window !== 'undefined') {
-    return ''; // Use relative URLs in browser
+    return '';
   }
   
-  // For Vercel deployment
   if (process.env.VERCEL_URL) {
     return `https://${process.env.VERCEL_URL}`;
   }
   
-  // For local development
   return 'http://localhost:3000';
 }
 
 export async function getProfiles(): Promise<Profile[]> {
   const baseUrl = getBaseUrl();
   
-  // Return fallback data during build time
   if (!baseUrl) {
     return FALLBACK_DATA.profiles;
   }
@@ -69,10 +63,16 @@ export async function getProfiles(): Promise<Profile[]> {
       throw new Error('Failed to fetch profiles');
     }
 
-    return res.json();
+    const data = await res.json();
+    
+    // Add validation to ensure each profile has required fields
+    return data.map((profile: Profile) => ({
+      ...profile,
+      price: profile?.price || '가격 미정',  // Provide fallback value if price is undefined
+    }));
   } catch (error) {
     console.error('Error fetching profiles:', error);
-    return FALLBACK_DATA.profiles; // Return fallback data on error
+    return FALLBACK_DATA.profiles;
   }
 }
 
