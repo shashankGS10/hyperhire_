@@ -48,7 +48,7 @@ export default function Carousel({ profiles }: CarouselProps) {
 
   return (
     <div className="relative flex h-full  justify-center ">
-      {/* Price Tooltip */}
+      {/* Price Tooltip ++*/}
 
       <motion.div
         initial={{ opacity: 0, y: -20 }}
@@ -58,7 +58,7 @@ export default function Carousel({ profiles }: CarouselProps) {
       >
         <div className="flex items-center gap-2">
           <span className="text-[#5EBFBF] font-extrabold">$</span>
-          <span className="text-black">{profiles[activeIndex].price}</span>
+          <span className="text-black">월 101만원</span>
         </div>
         <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white rotate-45"></div>
       </motion.div>

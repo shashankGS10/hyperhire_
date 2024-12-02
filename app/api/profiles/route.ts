@@ -15,7 +15,7 @@ const profiles: Profile[] = [
     role: "디자인 · 3y+",
     skills: ["UI/UX Design", "Figma", "Photoshop", "Prototyping"],
     flag: "🇰🇷",
-    price: "월 100만원",
+    price: "월 101만원",
     image: "https://images.unsplash.com/photo-1624561172888-ac93c696e10c?q=80&w=2592"
   },
   {
@@ -23,7 +23,7 @@ const profiles: Profile[] = [
     role: "개발자 · 5y+",
     skills: ["React", "Node.js", "MongoDB", "AWS"],
     flag: "🇺🇸",
-    price: "월 100만원",
+    price: "월 102만원",
     image: "https://images.unsplash.com/photo-1624561172888-ac93c696e10c?q=80&w=2592"
   }
 ]
